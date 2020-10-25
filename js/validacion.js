@@ -4,32 +4,34 @@ function startValidacion(){
 
 }
 function checkNombre(){
-
+    var nombre;
+    nombre = document.getElementById("nombre");
 }
 function checkApellido(){
+    var apellido;
+    apellido = document.getElementById("apellido");
 
 }
 function checkDomicilio(){
-
+    var domicilio;
+    domicilio = document.getElementById("domicilio");
 }
 
 
 function checkDni(){
     var dni;
-    /*nombre = document.getElementById("nombre");
-    apellido = document.getElementById("apellido");*/
     dni = document.getElementById("dni");
-   /* domicilio = document.getElementById("domicilio");
-    email =  nombre = document.getElementById("email");*/
+   
 
     if(dni.length==8){
 
-        if(dni>0 && dni<9){
+       /* if(dni>0 && dni<9){
+            alert("correcto");
 
         }else{
             alert("ingrese solo numeros")
-        }
-      
+        }*/
+        alert("correcto");
     }else{
        alert("incorrecto");
     }
@@ -39,6 +41,8 @@ function checkDni(){
 }
 
 function checkEmail(){
+    var email;
+    email =  nombre = document.getElementById("email");
 
 }
 
