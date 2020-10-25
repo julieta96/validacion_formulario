@@ -1,7 +1,6 @@
 function startValidacion(){
     var enviar = document.getElementById("enviar");
-    enviar.addEventListener("click", checkValidacion);
-    checkValidacion();
+    enviar.addEventListener("click", checkDni);
 
 }
 function checkNombre(){
