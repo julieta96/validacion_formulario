@@ -6,7 +6,7 @@ function startValidacion(){
 
 }
 function checkDni(dni){
-    var size = dni;
+    var size = dni.value;
 
    alert(size); 
 }
