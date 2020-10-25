@@ -8,11 +8,7 @@ function checkDni(){
     dni = document.getElementById("dni");
     size = dni.length;
 
-    if(size==8){
-        alert("correcto");
-    }else{
-        alert("incorrecto");
-    }
+   
 }
 
 /*function checkNombre(){
