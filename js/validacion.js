@@ -1,10 +1,10 @@
 function startValidacion(){
     var enviar = document.getElementById("enviar");
-    enviar.addEventListener("click", checkDni);
+    var dni = document.getElementById("dni");
+    enviar.addEventListener("click", checkDni(dni));
 
 }
-function checkDni(){
-    var dni= document.getElementById("dni");
+function checkDni(dni){
     var size = dni.length;
 
    alert(size); 
