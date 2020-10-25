@@ -8,7 +8,7 @@ function checkDni(){
     dni = document.getElementById("dni");
     size = dni.length;
 
-   console.log(size); 
+   alert(size); 
 }
 
 /*function checkNombre(){
