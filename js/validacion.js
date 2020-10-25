@@ -37,4 +37,4 @@ function checkEmail(){
 
 
 
-window.addEventListener("load" , startValidacion , false);
+window.addEventListener("load" , startValidacion);
