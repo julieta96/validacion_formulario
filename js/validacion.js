@@ -10,10 +10,12 @@ function checkDni(){
 
     if(size==8){
         alert("correcto");
+    }else{
+        alert("incorrecto");
     }
 }
 
-function checkNombre(){
+/*function checkNombre(){
     var nombre;
     nombre = document.getElementById("nombre");
 }
@@ -31,7 +33,7 @@ function checkEmail(){
     var email;
     email =  nombre = document.getElementById("email");
 
-}
+}*/
 
 
 
