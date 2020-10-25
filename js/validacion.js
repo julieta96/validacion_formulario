@@ -3,6 +3,16 @@ function startValidacion(){
     enviar.addEventListener("click", checkDni);
 
 }
+function checkDni(){
+    var dni;
+    dni = document.getElementById("dni");
+    size = dni.length;
+
+    if(size==8){
+        alert("correcto");
+    }
+}
+
 function checkNombre(){
     var nombre;
     nombre = document.getElementById("nombre");
@@ -15,11 +25,6 @@ function checkApellido(){
 function checkDomicilio(){
     var domicilio;
     domicilio = document.getElementById("domicilio");
-}
-
-function checkDni(){
-    var dni;
-    dni = document.getElementById("dni");
 }
 
 function checkEmail(){
