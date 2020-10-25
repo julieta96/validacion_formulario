@@ -1,31 +1,48 @@
 function startValidacion(){
-    var enviar = document.getElementById();
+    var enviar = document.getElementById("enviar");
+    enviar.addEventListener("click", checkValidacion);
     checkValidacion();
 
 }
-function send(){
+function checkNombre(){
 
 }
-function checkValidacion(){
-    var nombre, apellido , dni , email , domicilio;
-    nombre = document.getElementById("nombre");
-    apellido = document.getElementById("apellido");
+function checkApellido(){
+
+}
+function checkDomicilio(){
+
+}
+
+
+function checkDni(){
+    var dni;
+    /*nombre = document.getElementById("nombre");
+    apellido = document.getElementById("apellido");*/
     dni = document.getElementById("dni");
-    domicilio = document.getElementById("domicilio");
-    email =  nombre = document.getElementById("email");
+   /* domicilio = document.getElementById("domicilio");
+    email =  nombre = document.getElementById("email");*/
 
-    if(dni.length!=8){
-       alert("dni debe tener 8 numeros");
-    }else{
-       alert("correcto");
-    }
-    if(dni>0 && dni<9){
+    if(dni.length==8){
 
+        if(dni>0 && dni<9){
+
+        }else{
+            alert("ingrese solo numeros")
+        }
+      
     }else{
-        alert("ingrese solo numeros")
+       alert("incorrecto");
     }
+   
 
 
 }
+
+function checkEmail(){
+
+}
+
+
 
 window.addEventListener("load" , startValidacion , false);
