@@ -4,9 +4,8 @@ function startValidacion(){
 
 }
 function checkDni(){
-    var dni;
-    dni = document.getElementById("dni");
-    size = dni.length;
+    var dni= document.getElementById("dni");
+    var size = dni.length;
 
    alert(size); 
 }
