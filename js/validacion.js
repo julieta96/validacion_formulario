@@ -1,6 +1,7 @@
 function startValidacion(){
     var enviar = document.getElementById("enviar");
-    var dni = document.getElementById("dni");
+    var dni ;
+    dni=document.getElementById("dni");
     enviar.addEventListener("click", checkDni(dni));
 
 }
