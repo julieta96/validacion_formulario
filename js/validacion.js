@@ -17,6 +17,10 @@ function checkDomicilio(){
     domicilio = document.getElementById("domicilio");
 }
 
+function checkDni(){
+    var dni;
+    dni = document.getElementById("dni");
+}
 
 function checkEmail(){
     var email;
