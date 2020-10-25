@@ -1,4 +1,6 @@
 function startValidacion(){
+    var enviar = document.getElementById();
+    checkValidacion();
 
 }
 function send(){
