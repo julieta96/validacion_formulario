@@ -5,8 +5,9 @@ body{
 
 h1{
 
-    font-family: 'Roboto', sans-serif;
-    font-family: 'Roboto Mono', monospace;
+   /* font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Mono', monospace;*/
+    font-family: 'Dosis', sans-serif;
     font-weight: bold;
 }
 
