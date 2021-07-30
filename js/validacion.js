@@ -1,35 +1,80 @@
 function startValidacion(){
-    var enviar = document.getElementById("enviar");
-    var dni ;
-    dni=document.getElementById("dni");
-    enviar.addEventListener("click", checkDni(dni));
+
+    let enviar = $("#enviar");
+    let  dni ;
+    dni=$("#dni");
+    enviar.click(function(){
+
+        checkDni(dni);
+        checkNombre($("#nombre"));
+        checkApellido($("#apellido"));
+        checkDomicilio($("#domicilio"));
+        checkEmail($("#email"));
+        checkTelefono($("#telefono"));
+
+
+    });
 
 }
+
 function checkDni(dni){
-    var size = dni.value;
 
-   alert(size); 
+    let passaport = dni.val();
+    let size = passaport.length;
+
+   if(passaport!==""){
+
+     if(size==8) {
+         
+         alert("right");
+
+     }else{
+
+        alert("el dni debe contener 8 numeros");
+     }
+
+        
+   }
+   
 }
 
-/*function checkNombre(){
-    var nombre;
-    nombre = document.getElementById("nombre");
-}
-function checkApellido(){
-    var apellido;
-    apellido = document.getElementById("apellido");
-
-}
-function checkDomicilio(){
-    var domicilio;
-    domicilio = document.getElementById("domicilio");
+function checkNombre(nombre){
+    let name = nombre.val();
+    
+    alert(name);
 }
 
-function checkEmail(){
-    var email;
-    email =  nombre = document.getElementById("email");
 
-}*/
+function checkApellido(apellido){
+
+    let lastName = apellido.val();
+   
+    alert(lastName);
+
+}
+
+function checkDomicilio(address){
+
+    let addressUser = address.val();
+   
+    alert(addressUser);
+}
+
+function checkEmail(email){
+
+    let emailUser = email.val();
+   
+    alert(emailUser);
+
+}
+
+function checkTelefono(phone){
+
+    let telefono = phone.val();
+   
+    alert(telefono);
+
+}
 
 
 
