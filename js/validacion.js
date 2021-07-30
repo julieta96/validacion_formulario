@@ -1,18 +1,13 @@
 function startValidacion(){
 
-    let enviar = $("#enviar");
-    let  dni ;
-    dni=$("#dni");
-    enviar.click(function(){
+    $("#enviar").click(function(){
 
-        checkDni(dni);
+        checkDni($("#dni"));
         checkNombre($("#nombre"));
         checkApellido($("#apellido"));
         checkDomicilio($("#domicilio"));
         checkEmail($("#email"));
         checkTelefono($("#telefono"));
-
-
     });
 
 }
@@ -30,7 +25,8 @@ function checkDni(dni){
 
      }else{
 
-        alert("el dni debe contener 8 numeros");
+        $(location).attr('href',"index.html#validacion");
+        createMessageAlert("El dni debe contener <strong>8 numeros</strong>");
      }
 
         
@@ -39,7 +35,9 @@ function checkDni(dni){
 }
 
 function checkNombre(nombre){
+
     let name = nombre.val();
+    let size = name.length;
     
     alert(name);
 }
@@ -48,6 +46,7 @@ function checkNombre(nombre){
 function checkApellido(apellido){
 
     let lastName = apellido.val();
+    let size = lastName.length;
    
     alert(lastName);
 
@@ -56,6 +55,7 @@ function checkApellido(apellido){
 function checkDomicilio(address){
 
     let addressUser = address.val();
+    let size = addressUser.length;
    
     alert(addressUser);
 }
@@ -71,8 +71,39 @@ function checkEmail(email){
 function checkTelefono(phone){
 
     let telefono = phone.val();
+    let size = telefono.length;
+
+     if(telefono!==""){
+
+     if(size>=1 && size<=10) {
+         
+         alert("right");
+
+     }else{
+
+        $(location).attr('href',"index.html#validacion");
+        createMessageAlert("El telefono debe contener como maximo <strong>10 numeros</strong>");
+     }
+
+        
+   }
    
-    alert(telefono);
+
+}
+
+function createMessageAlert(mensaje){
+
+    let alert = $("<div>");
+    let p = $("<p>");
+
+    alert.addClass("alert alert-warning container align-items-center row mb-2");
+    alert.attr("role","alert");
+    alert.append(p);
+    p.addClass("text-center");
+    p.html(mensaje);
+    
+    $(".mensaje").append(alert);
+   
 
 }
 
