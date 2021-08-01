@@ -19,7 +19,7 @@ function checkDni(dni){
 
    if(passaport!==""){
 
-     if(size==8 && numbers(passaport)=="true") {
+     if(size==8 && numbers(passaport)==true) {
          
          alert("right");
 
