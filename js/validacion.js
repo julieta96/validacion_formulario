@@ -19,7 +19,7 @@ function checkDni(dni){
 
    if(passaport!==""){
 
-     if(size==8) {
+     if(size==8 && numbers(passaport)=="true") {
          
          alert("right");
 
@@ -38,8 +38,19 @@ function checkNombre(nombre){
 
     let name = nombre.val();
     let size = name.length;
-    
-    alert(name);
+
+    if(name!=""){
+
+     if(size<=20 && letters(name)==true){
+         alert(name);
+     }else{
+
+        $(location).attr('href',"index.html#validacion");
+        createMessageAlert("El nombre no debe contener mas de <strong>20 letras</strong>");
+     }
+
+  }
+   
 }
 
 
@@ -47,8 +58,19 @@ function checkApellido(apellido){
 
     let lastName = apellido.val();
     let size = lastName.length;
-   
-    alert(lastName);
+    
+    if(lastName!=""){
+
+          if(size<=30 && letters(lastName)==true){
+         alert(lastName);
+     }else{
+
+        $(location).attr('href',"index.html#validacion");
+        createMessageAlert("El apellido no debe contener mas de <strong>30 letras</strong>");
+     }
+
+
+   }
 
 }
 
@@ -75,7 +97,8 @@ function checkTelefono(phone){
 
      if(telefono!==""){
 
-     if(size>=1 && size<=10) {
+
+     if(size>=8 && size<=10 && (numbers(telefono)==true) ) {
          
          alert("right");
 
@@ -87,6 +110,7 @@ function checkTelefono(phone){
 
         
    }
+
    
 
 }
@@ -106,6 +130,56 @@ function createMessageAlert(mensaje){
    
 
 }
+
+
+function letters(string){
+
+    let lowerUpperCaseLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let test = false;
+
+    for (let i=0; i <string.length ; i++) { 
+        
+        if( string.charAt(i) === lowerUpperCaseLetters.charAt(i) ){
+
+            test = false;
+            break;
+
+        }else{
+
+            test = true;
+        }
+
+        
+    }
+
+    return test;
+
+ }
+
+
+ function numbers(nums){
+
+    let numbers = "0123456789";
+    let test = false;
+
+    for (let i=0; i <nums.length ; i++) { 
+
+        
+        if(nums.charAt(i) === numbers.charAt(i) ){
+
+            test = false;
+            break;
+
+        }else{
+             test = true;
+        }
+
+        
+    }
+
+    return  test;
+
+ } 
 
 
 
