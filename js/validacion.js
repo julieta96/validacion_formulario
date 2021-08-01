@@ -108,7 +108,7 @@ function checkEmail(email){
         alert(emailUser);
         }else{
              $(location).attr('href',"index.html#validacion");
-            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (letras o numeros o guion bajo, 1 punto y 1 arroba)</strong>");
+            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (debe contener letras minusculas, un punto , un arroba y puede contener numeros y como maximo 2 guion bajo)</strong>");
         }
     }
    
@@ -237,7 +237,7 @@ function letters(string){
 
  function lettersNumbersCharacters(string){
 
-    let lowerCaseLettersNumbersAndOthersCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","@","."];
+    let lowerCaseLettersNumbersAndOthersCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","_","@","."];
     let array = string.split("");
     let test = false;
     let at = 0;
