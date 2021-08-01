@@ -99,8 +99,20 @@ function checkDomicilio(address){
 function checkEmail(email){
 
     let emailUser = email.val();
+    let size = emailUser.length;
+
+    if(emailUser!=""){
+
+        if (size<=40 && lettersNumbersCharacters(emailUser)==true) {
+
+        alert(emailUser);
+        }else{
+             $(location).attr('href',"index.html#validacion");
+            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (letras o numeros o guion bajo, 1 punto y 1 arroba)</strong>");
+        }
+    }
    
-    alert(emailUser);
+   
 
 }
 
@@ -203,7 +215,6 @@ function letters(string){
     let lowerUpperCaseLettersAndNumbers = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
                 "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9"];
     let array = string.split(" ").join("");
-    console.log(array);
     let test = false;
 
     for (let i=0; i <array.length ; i++) { 
@@ -219,6 +230,57 @@ function letters(string){
 
         
     }
+
+    return  test;
+
+ } 
+
+ function lettersNumbersCharacters(string){
+
+    let lowerCaseLettersNumbersAndOthersCharacters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","0","1","2","3","4","5","6","7","8","9","@","."];
+    let array = string.split("");
+    let test = false;
+    let at = 0;
+    let dot = 0;
+    let underscore = 0;
+
+    for (let i=0; i <array.length ; i++) { 
+
+        if( !( lowerCaseLettersNumbersAndOthersCharacters.includes(array[i]) )){
+
+            test = false;
+            break;
+
+        }else{
+              
+              if(string.charAt(i) =='@'){
+
+                at++;
+
+              }
+
+              if(string.charAt(i) =='.'){
+
+                dot++;
+
+              }
+
+              if(string.charAt(i) =='_'){
+
+                underscore++;
+
+              }
+
+                 
+        }
+
+        
+    }
+
+    if(at==1 && dot == 1 && underscore<=2){
+
+                test = true;
+     }
 
     return  test;
 
