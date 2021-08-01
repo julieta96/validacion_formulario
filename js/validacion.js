@@ -134,12 +134,14 @@ function createMessageAlert(mensaje){
 
 function letters(string){
 
-    let lowerUpperCaseLetters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let lowerUpperCaseLetters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z",
+                "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];         
+    let array = string.split("");
     let test = false;
 
     for (let i=0; i <string.length ; i++) { 
         
-        if( string.charAt(i) === lowerUpperCaseLetters.charAt(i) ){
+        if(!(lowerUpperCaseLetters.includes(array[i]) )){
 
             test = false;
             break;
@@ -159,13 +161,14 @@ function letters(string){
 
  function numbers(nums){
 
-    let numbers = "0123456789";
+    let numbers = ["0","1","2","3","4","5","6","7","8","9"];
+    let array = nums.split("");
     let test = false;
 
     for (let i=0; i <nums.length ; i++) { 
 
         
-        if(nums.charAt(i) === numbers.charAt(i) ){
+        if(!(numbers.includes(array[i]) )){
 
             test = false;
             break;
