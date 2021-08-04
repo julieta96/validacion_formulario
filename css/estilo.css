@@ -3,14 +3,16 @@ body{
     margin: 0;
 }
 
-h1{
+.title{
 
-   /* font-family: 'Roboto', sans-serif;
-    font-family: 'Roboto Mono', monospace;*/
     font-family: 'Dosis', sans-serif;
     font-weight: bold;
 }
 
 div{
 margin:auto;
+}
+
+.input-r{
+	font-size: 10px;
 }
