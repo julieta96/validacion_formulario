@@ -15,7 +15,6 @@
 
    <h1 class="text-center mt-3 mb-5 text-light title">Contact Form</h1>
    
-
    <div class="mensaje container">
    </div>
 
@@ -23,7 +22,8 @@
 
    <br>  
 
-    <div class="row">
+    <div class="row mb-3"  id="container-inputs">
+
        <div class="col">         
         <input class="form-control" type="text" placeholder="First Name" id="nombre">
        </div> 
@@ -31,11 +31,13 @@
        <div class="col">            
         <input class="form-control" type="text" placeholder="Last Name" id="apellido">
        </div> 
+
     </div>
 
-    <br>
+   
 
-    <div class="row">
+    <div class="row mb-3" id="container-inputs">
+
        <div class="col">            
         <input class="form-control" type="text" placeholder="Passaport Number" id="dni">
        </div> 
@@ -43,21 +45,22 @@
        <div class="col">           
         <input class="form-control" type="text" placeholder="Address" id="domicilio">
        </div> 
+
     </div>
 
-    <br>
 
-  <div class="row">
+  <div class="row mb-3" id="container-inputs">
+
    <div class="col">            
     <input class="form-control" type="text" placeholder="E-mail" id="email">
    </div> 
+
     <div class="col">            
     <input class="form-control" type="text" placeholder="Phone" id="telefono">
    </div>
-</div>
-  
-  <br>
 
+ </div>
+  
    <button type="submit" class="d-flex justify-content-center btn btn-outline-success" id="enviar">SEND</button>
    
    
@@ -65,6 +68,7 @@
 
  <script src="js/jquery.js"></script>
  <script src="js/validacion.js"></script>
+ <script src="js/responsive.js"></script>
  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>

@@ -13,6 +13,33 @@ div{
 margin:auto;
 }
 
-.input-r{
-	font-size: 10px;
+
+
+
+@media screen (min-width: 400px) and (max-width: 769px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .mensaje>.alert p, .mensaje>.alert p strong{
+
+    font-size: 12px;
+    padding: 0px;
+
+  }
+
+  form{
+  	margin:8px;
+  }
+
+  #container-inputs div input{
+	font-size: 8px;
+  }
+
+}
+
+@media screen (min-width: 770px) and (max-width:1200px) {
+  .title {
+    font-size: 30px;
+  }
 }
