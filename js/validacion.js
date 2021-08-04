@@ -19,7 +19,7 @@ function checkDni(dni){
 
    if(passaport!==""){
 
-     if(size==8 && numbers(passaport)==true) {
+     if(size==8 && numbers(passaport)) {
          
          alert("right");
 
@@ -41,7 +41,7 @@ function checkNombre(nombre){
 
     if(name!=""){
 
-     if(size<=20 && letters(name)==true){
+     if(size<=20 && letters(name)){
          alert(name);
      }else{
 
@@ -61,7 +61,7 @@ function checkApellido(apellido){
     
     if(lastName!=""){
 
-          if(size<=30 && letters(lastName)==true){
+          if(size<=30 && letters(lastName)){
          alert(lastName);
      }else{
 
@@ -81,7 +81,7 @@ function checkDomicilio(address){
 
     if(addressUser!=""){
 
-        if(size<=30 && lettersAndNumbers(addressUser)==true){
+        if(size<=30 && lettersAndNumbers(addressUser)){
 
             alert(addressUser);
 
@@ -103,7 +103,7 @@ function checkEmail(email){
 
     if(emailUser!=""){
 
-        if (size<=40 && lettersNumbersCharacters(emailUser)==true) {
+        if (size<=40 && lettersNumbersCharacters(emailUser)) {
 
         alert(emailUser);
         }else{
@@ -124,7 +124,7 @@ function checkTelefono(phone){
      if(telefono!==""){
 
 
-     if(size>=8 && size<=10 && (numbers(telefono)==true) ) {
+     if(size>=8 && size<=10 && (numbers(telefono)) ) {
          
          alert("right");
 
