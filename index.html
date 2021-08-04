@@ -13,13 +13,13 @@
 </head>
 <body class="bg-success">
 
-   <h1 class="text-center mt-3 mb-5 text-light title d-none d-sm-none d-md-block">Contact Form</h1>
-   <h3 class="text-center mt-3 mb-4 text-light title d-none d-sm-block d-md-none">Contact Form</h1>
+   <h1 class="text-center mt-3 mb-5 text-light title">Contact Form</h1>
+   
 
    <div class="mensaje container">
    </div>
 
-  <form name="formulario_prueba" class="card container pb-3 d-none d-sm-none d-md-block" action="index.html#validacion" style="width: 100%"> 
+  <form name="formulario_prueba" class="card container pb-3 col-xxl-12 col-xl-6 col-md-8 col-lg-4 col-sm-4 " action="index.html#validacion" style="width: 100%"> 
 
    <br>  
 
@@ -58,60 +58,10 @@
   
   <br>
 
-   <button type="submit" class="d-flex justify-content-center btn btn-outline-success d-none d-md-block d-sm-none" id="enviar">SEND</button>
+   <button type="submit" class="d-flex justify-content-center btn btn-outline-success" id="enviar">SEND</button>
+   
    
  </form>
-
- <!------------responsive-------------->
-
-  <form name="formulario_prueba" class="card container p-4 p-t-2 pb-3 d-none d-sm-block d-md-none" action="index.html#validacion" style="width: 50%"> 
-
-   <br>  
-
-    <div class="col">
-       <div class="d-flex row">         
-        <input class="form-control input-r" type="text" placeholder="First Name" id="nombre" style="font-size:12px">
-       </div> 
-        <br>
-       <div class="d-flex row">            
-        <input class="form-control input-r" type="text" placeholder="Last Name" id="apellido" style="font-size:12px">
-       </div> 
-    </div>
-
-    <br>
-
-    <div class="col">
-       <div class="d-flex row">            
-        <input class="form-control input-r" type="text" placeholder="Passaport Number" id="dni" style="font-size:12px">
-       </div> 
-       <br>
-       <div class="d-flex row">           
-        <input class="form-control input-r" type="text" placeholder="Address" id="domicilio" style="font-size:12px">
-       </div> 
-    </div>
-
-    <br>
-
-  <div class="col">
-   <div class="d-flex row">            
-    <input class="form-control input-r" type="text" placeholder="E-mail" id="email" style="font-size:12px">
-   </div> 
-   <br>
-    <div class="d-flex row">            
-    <input class="form-control input-r" type="text" placeholder="Phone" id="telefono" style="font-size:12px">
-   </div>
-</div>
-  
-  <br>
-
-   <button type="submit" class="d-flex justify-content-center btn btn-outline-success btn-sm d-none d-sm-block d-lg-none d-md-none d-xs-block" id="enviar">SEND</button>
-
- </form>
-
- <!--end responsive-->
-
-
-
 
  <script src="js/jquery.js"></script>
  <script src="js/validacion.js"></script>
