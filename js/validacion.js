@@ -1,17 +1,52 @@
 function startValidacion(){
 
-    $("#contact-form");
-    $("#contact-form input");
+    $("#contact-form").submit((e)=>{
 
-    $("#enviar").click(function(){
+      e.preventDefault();
 
-        checkDni($("#dni"));
-        checkNombre($("#nombre"));
-        checkApellido($("#apellido"));
-        checkDomicilio($("#domicilio"));
-        checkEmail($("#email"));
-        checkTelefono($("#telefono"));
     });
+    
+    let input = $("input");
+
+    $("input").each(function(i){
+
+
+      $(input[i]).keyup(formValidation);
+      $(input[i]).blur(formValidation);
+        
+    
+    });
+
+}
+
+function formValidation(e){
+
+  switch(e.target.id){
+
+    case "dni":
+    checkDni($("#dni"));
+    break;
+
+    case "nombre":
+    checkNombre($("#nombre"));
+    break;
+
+    case "apellido":
+    checkApellido($("#apellido"));
+    break;
+
+    case "domicilio":
+    checkDomicilio($("#domicilio"));
+    break;
+
+    case "email":
+    checkEmail($("#email"));
+    break;
+
+    case "telefono":
+    checkTelefono($("#telefono"));
+    break;
+  }
 
 }
 
@@ -24,14 +59,18 @@ function checkDni(dni){
 
      if(size==8 && numbers(passaport)) {
          
-         dni.toggleClass("border border-success");
+         //dni.toggleClass("border border-success");
+         dni.removeClass("border border-danger");
+         dni.addClass("border border-success");
+         $('.alert-dni').remove();
 
      }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El dni debe contener <strong>8 numeros</strong>");
+        createMessageAlert("El dni debe contener <strong>8 numeros</strong>","alert-dni");
 
-        dni.toggleClass("border border-danger");
+        dni.addClass("border border-danger");
+        dni.removeClass("border border-success");
      }
 
         
@@ -47,12 +86,17 @@ function checkNombre(nombre){
     if(name!=""){
 
      if(size<=20 && letters(name)){
-          nombre.toggleClass("border border-success");
+          //nombre.toggleClass("border border-success");
+          nombre.removeClass("border border-danger");
+          nombre.addClass("border border-success");
+          $('.alert-name').remove();
      }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El nombre no debe contener mas de <strong>20 letras</strong>");
-        nombre.toggleClass("border border-danger");
+        createMessageAlert("El nombre no debe contener mas de <strong>20 letras</strong>","alert-name");
+        //nombre.toggleClass("border border-danger");
+        nombre.addClass("border border-danger");
+        nombre.removeClass("border border-success");
      }
 
   }
@@ -68,12 +112,17 @@ function checkApellido(apellido){
     if(lastName!=""){
 
           if(size<=30 && letters(lastName)){
-         apellido.toggleClass("border border-success");
+         //apellido.toggleClass("border border-success");
+          apellido.removeClass("border border-danger");
+          apellido.addClass("border border-success");
+         $('.alert-lastName').remove();
      }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El apellido no debe contener mas de <strong>30 letras</strong>");
-        apellido.toggleClass("border border-danger");
+        createMessageAlert("El apellido no debe contener mas de <strong>30 letras</strong>","alert-lastName");
+        //apellido.toggleClass("border border-danger");
+        apellido.addClass("border border-danger");
+        apellido.removeClass("border border-success");
      }
 
 
@@ -90,13 +139,18 @@ function checkDomicilio(address){
 
         if(size<=30 && lettersAndNumbers(addressUser)){
 
-           address.toggleClass("border border-success");
+           //address.toggleClass("border border-success");
+           address.removeClass("border border-danger");
+           address.addClass("border border-success");
+           $('.alert-address').remove();
 
         }else{
 
             $(location).attr('href',"index.html#validacion");
-            createMessageAlert("La direccion debe contener <strong> no mas de 30 caracteres (letras y numeros)</strong>");
-            address.toggleClass("border border-danger");
+            createMessageAlert("La direccion debe contener <strong> no mas de 30 caracteres (letras y numeros)</strong>","alert-address");
+            //address.toggleClass("border border-danger");
+            address.addClass("border border-danger");
+            address.removeClass("border border-success");
         }
 
     }
@@ -113,11 +167,16 @@ function checkEmail(email){
 
         if (size<=40 && lettersNumbersCharacters(emailUser)) {
 
-         email.toggleClass("border border-success");
+         //email.toggleClass("border border-success");
+          email.removeClass("border border-danger");
+          email.addClass("border border-success");
+         $('.alert-email').remove();
         }else{
              $(location).attr('href',"index.html#validacion");
-            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (debe contener letras minusculas, un punto , un arroba y puede contener numeros y como maximo 2 guion bajo)</strong>");
-            email.toggleClass("border border-danger");
+            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (debe contener letras minusculas, un punto , un arroba y puede contener numeros y como maximo 2 guion bajo)</strong>","alert-email");
+            //email.toggleClass("border border-danger");
+            email.addClass("border border-danger");
+            email.removeClass("border border-success");
         }
     }
    
@@ -135,13 +194,18 @@ function checkTelefono(phone){
 
      if(size>=8 && size<=10 && (numbers(telefono)) ) {
          
-        phone.toggleClass("border border-success");
+        //phone.toggleClass("border border-success");
+        phone.removeClass("border border-danger");
+        phone.addClass("border border-success");
+        $('.alert-phone').remove();
 
      }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El telefono debe contener como maximo <strong>10 numeros</strong>");
-        phone.toggleClass("border border-danger");
+        createMessageAlert("El telefono debe contener como maximo <strong>10 numeros</strong>","alert-phone");
+        //phone.toggleClass("border border-danger");
+        phone.addClass("border border-danger");
+        phone.removeClass("border border-success");
      }
 
         
@@ -151,12 +215,12 @@ function checkTelefono(phone){
 
 }
 
-function createMessageAlert(mensaje){
+function createMessageAlert(mensaje, classAlert){
 
     let alert = $("<div>");
     let p = $("<p>");
 
-    alert.addClass("alert alert-warning container align-items-center row mb-2");
+    alert.addClass(`alert alert-warning container align-items-center row mb-2 ${classAlert}`);
     alert.attr("role","alert");
     alert.append(p);
     p.addClass("text-center");
