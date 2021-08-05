@@ -24,6 +24,11 @@ margin:auto;
   .mensaje>.alert p, .mensaje>.alert p strong{
 
     font-size: 12px;
+   
+  }
+
+  .mensaje>.alert {
+
     padding: 0px;
 
   }
@@ -32,9 +37,11 @@ margin:auto;
   	margin:8px;
   }
 
-  #container-inputs div input{
-	font-size: 8px;
+  #container-inputs div input , #enviar{
+	font-size: 12px;
   }
+
+
 
 }
 
