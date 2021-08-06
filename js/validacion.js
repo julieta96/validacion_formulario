@@ -8,7 +8,7 @@ function startValidacion(){
     
     let input = $("input");
 
-    $("input").each(function(i){
+    $("input").each((i)=>{
 
 
       $(input[i]).keyup(formValidation);
@@ -19,215 +19,127 @@ function startValidacion(){
 
 }
 
-function formValidation(e){
+
+const formValidation=(e)=>{
 
   switch(e.target.id){
 
     case "dni":
-    checkDni($("#dni"));
+    checkInput1(e.target ,
+               numbers( $("#dni").val() ),
+               8,
+               $("#alert-dni"));
     break;
 
     case "nombre":
-    checkNombre($("#nombre"));
+    checkInput2(e.target ,
+               letters( $("#nombre").val() ),
+               ($("#nombre").val()).length,
+               3,
+               20,
+               $("#alert-name"));
     break;
 
     case "apellido":
-    checkApellido($("#apellido"));
-    break;
+    checkInput2(e.target ,
+                  letters( $("#apellido").val() ),
+                  ($("#apellido").val()).length,
+                  4,
+                  30,
+                  $("#alert-lastName"));
+      break;
 
     case "domicilio":
-    checkDomicilio($("#domicilio"));
+    checkInput2(e.target ,
+               lettersAndNumbers( $("#domicilio").val() ),
+               ($("#domicilio").val()).length,
+               5,
+               30,
+               $("#alert-address"));
     break;
 
     case "email":
-    checkEmail($("#email"));
+    checkInput2(e.target ,
+               lettersNumbersCharacters( $("#email").val() ),
+               ($("#email").val()).length,
+               8,
+               40,
+               $("#alert-email"));
     break;
 
     case "telefono":
-    checkTelefono($("#telefono"));
+      checkInput2(e.target ,
+               numbers( $("#telefono").val() ),
+               ($("#telefono").val()).length,
+               8,
+               10,
+               $("#alert-phone"));
     break;
   }
 
 }
 
-function checkDni(dni){
+let checkInput1=(input, testCharacters, sizeInput, alert)=>{
 
-    let passaport = dni.val();
-    let size = passaport.length;
+  let inputValue = input.value;
+  let size = inputValue.length;
 
-   if(passaport!==""){
+  if(inputValue!==""){
 
-     if(size==8 && numbers(passaport)) {
-         
-         //dni.toggleClass("border border-success");
-         dni.removeClass("border border-danger");
-         dni.addClass("border border-success");
-         $('.alert-dni').remove();
+    if( (testCharacters && size==sizeInput) ){
 
-     }else{
+      $(input).removeClass("border-danger");
+      $(input).addClass("border-success");
 
-        $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El dni debe contener <strong>8 numeros</strong>","alert-dni");
+      $(alert).removeClass("d-block");
+      $(alert).addClass("d-none");
 
-        dni.addClass("border border-danger");
-        dni.removeClass("border border-success");
-     }
-
-        
-   }
-   
-}
-
-function checkNombre(nombre){
-
-    let name = nombre.val();
-    let size = name.length;
-
-    if(name!=""){
-
-     if(size<=20 && letters(name)){
-          //nombre.toggleClass("border border-success");
-          nombre.removeClass("border border-danger");
-          nombre.addClass("border border-success");
-          $('.alert-name').remove();
-     }else{
+    }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El nombre no debe contener mas de <strong>20 letras</strong>","alert-name");
-        //nombre.toggleClass("border border-danger");
-        nombre.addClass("border border-danger");
-        nombre.removeClass("border border-success");
-     }
+        $(alert).removeClass("d-none");
+        $(alert).addClass("d-block");
+
+        $(input).addClass("border-danger");
+        $(input).removeClass("border-success");
+
+       
+
+    }
+
 
   }
-   
+
 }
 
 
-function checkApellido(apellido){
+let checkInput2=(input, testCharacters, sizeInput, lessThan, greaterThan, alert)=>{
 
-    let lastName = apellido.val();
-    let size = lastName.length;
-    
-    if(lastName!=""){
+  let inputValue = input.value;
 
-          if(size<=30 && letters(lastName)){
-         //apellido.toggleClass("border border-success");
-          apellido.removeClass("border border-danger");
-          apellido.addClass("border border-success");
-         $('.alert-lastName').remove();
-     }else{
+  if(inputValue!==""){
+
+    if(( (testCharacters) && (sizeInput>=lessThan && sizeInput<=greaterThan) ) ){
+
+      $(input).removeClass("border-danger");
+      $(input).addClass("border-success");
+
+      $(alert).removeClass("d-block");
+      $(alert).addClass("d-none");
+
+    }else{
 
         $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El apellido no debe contener mas de <strong>30 letras</strong>","alert-lastName");
-        //apellido.toggleClass("border border-danger");
-        apellido.addClass("border border-danger");
-        apellido.removeClass("border border-success");
-     }
+        $(alert).removeClass("d-none");
+        $(alert).addClass("d-block");
 
+        $(input).addClass("border-danger");
+        $(input).removeClass("border-success");
 
-   }
-
-}
-
-function checkDomicilio(address){
-
-    let addressUser = address.val();
-    let size = addressUser.length;
-
-    if(addressUser!=""){
-
-        if(size<=30 && lettersAndNumbers(addressUser)){
-
-           //address.toggleClass("border border-success");
-           address.removeClass("border border-danger");
-           address.addClass("border border-success");
-           $('.alert-address').remove();
-
-        }else{
-
-            $(location).attr('href',"index.html#validacion");
-            createMessageAlert("La direccion debe contener <strong> no mas de 30 caracteres (letras y numeros)</strong>","alert-address");
-            //address.toggleClass("border border-danger");
-            address.addClass("border border-danger");
-            address.removeClass("border border-success");
-        }
+       
 
     }
-   
-    
-}
-
-function checkEmail(email){
-
-    let emailUser = email.val();
-    let size = emailUser.length;
-
-    if(emailUser!=""){
-
-        if (size<=40 && lettersNumbersCharacters(emailUser)) {
-
-         //email.toggleClass("border border-success");
-          email.removeClass("border border-danger");
-          email.addClass("border border-success");
-         $('.alert-email').remove();
-        }else{
-             $(location).attr('href',"index.html#validacion");
-            createMessageAlert("Formato de email ingresado incorrecto, <strong> no mas de 40 caracteres (debe contener letras minusculas, un punto , un arroba y puede contener numeros y como maximo 2 guion bajo)</strong>","alert-email");
-            //email.toggleClass("border border-danger");
-            email.addClass("border border-danger");
-            email.removeClass("border border-success");
-        }
-    }
-   
-   
-
-}
-
-function checkTelefono(phone){
-
-    let telefono = phone.val();
-    let size = telefono.length;
-
-     if(telefono!==""){
-
-
-     if(size>=8 && size<=10 && (numbers(telefono)) ) {
-         
-        //phone.toggleClass("border border-success");
-        phone.removeClass("border border-danger");
-        phone.addClass("border border-success");
-        $('.alert-phone').remove();
-
-     }else{
-
-        $(location).attr('href',"index.html#validacion");
-        createMessageAlert("El telefono debe contener como maximo <strong>10 numeros</strong>","alert-phone");
-        //phone.toggleClass("border border-danger");
-        phone.addClass("border border-danger");
-        phone.removeClass("border border-success");
-     }
-
-        
-   }
-
-   
-
-}
-
-function createMessageAlert(mensaje, classAlert){
-
-    let alert = $("<div>");
-    let p = $("<p>");
-
-    alert.addClass(`alert alert-warning container align-items-center row mb-2 ${classAlert}`);
-    alert.attr("role","alert");
-    alert.append(p);
-    p.addClass("text-center");
-    p.html(mensaje);
-    
-    $(".mensaje").append(alert);
-   
+  }
 
 }
 
