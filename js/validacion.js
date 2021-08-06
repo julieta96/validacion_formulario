@@ -108,6 +108,9 @@ let checkInput1=(input, testCharacters, sizeInput, alert)=>{
     }
 
 
+  }else{
+    $("#inputs-null").removeClass("d-none");
+    $("#inputs-null").addClass("d-block");
   }
 
 }
@@ -119,6 +122,9 @@ let checkInput2=(input, testCharacters, sizeInput, lessThan, greaterThan, alert)
 
   if(inputValue!==""){
 
+    $("#inputs-null").removeClass("d-block");
+    $("#inputs-null").addClass("d-none");
+
     if(( (testCharacters) && (sizeInput>=lessThan && sizeInput<=greaterThan) ) ){
 
       $(input).removeClass("border-danger");
@@ -126,6 +132,9 @@ let checkInput2=(input, testCharacters, sizeInput, lessThan, greaterThan, alert)
 
       $(alert).removeClass("d-block");
       $(alert).addClass("d-none");
+
+      $("#input-right").removeClass("d-block");
+      $("#input-right").addClass("d-none");
 
     }else{
 
@@ -136,10 +145,17 @@ let checkInput2=(input, testCharacters, sizeInput, lessThan, greaterThan, alert)
         $(input).addClass("border-danger");
         $(input).removeClass("border-success");
 
+       $("#input-right").removeClass("d-block");
+       $("#input-right").addClass("d-block");
+
        
 
     }
+  }else{
+    $("#inputs-null").removeClass("d-none");
+    $("#inputs-null").addClass("d-block");
   }
+
 
 }
 

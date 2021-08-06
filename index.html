@@ -18,38 +18,62 @@
    <div class="mensaje container">
 
     <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-name">
-      <p class="text-center" style="font-size: 1rem;">El nombre no debe contener mas de
+      
+      <p class="text-center" style="font-size: 1rem;">
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        El nombre no debe contener mas de
         <strong style="font-size: 1rem;">20 letras</strong>
       </p>
     </div>
 
-    <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-lastName">
-      <p class="text-center" style="font-size: 1rem;">El apellido no debe contener mas de 
+    <div class="alert alert-warning container align-items-center row mb-2 d-none" role="alert" id="alert-lastName">
+      
+      <p class="text-center" style="font-size: 1rem;"><i class="fas fa-exclamation-triangle mx-2"></i>El apellido no debe contener mas de 
         <strong style="font-size: 1rem;">30 letras</strong>
       </p>
     </div>
 
     <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-dni">
-      <p class="text-center" style="font-size: 1rem;">El dni debe contener 
+      
+      <p class="text-center" style="font-size: 1rem;">
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        El dni debe contener 
         <strong style="font-size: 1rem;">8 numeros</strong>
       </p>
     </div>
 
-    <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-email">
-      <p class="text-center" style="font-size: 1rem;">Formato de email ingresado incorrecto, 
+    <div class="alert alert-warning container align-items-center row mb-2 d-none" role="alert" id="alert-email">
+     
+      <p class="text-center" style="font-size: 1rem;"> 
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        Formato de email ingresado incorrecto, 
         <strong style="font-size: 1rem;"> no mas de 40 caracteres (debe contener letras minusculas, un punto , un arroba y puede contener numeros y como maximo 2 guion bajo)</strong>
       </p>
     </div>
 
-    <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-address">
-      <p class="text-center" style="font-size: 1rem;">La direccion debe contener 
+    <div class="alert alert-warning container align-items-center mb-2 row d-none" role="alert" id="alert-address">
+      
+      <p class="text-center" style="font-size: 1rem;">
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        La direccion debe contener 
         <strong style="font-size: 1rem;"> no mas de 30 caracteres (letras y numeros)</strong>
       </p>
     </div>
 
-    <div class="alert alert-warning container align-items-center row mb-2  d-none" role="alert" id="alert-phone">
-      <p class="text-center">El telefono debe contener como maximo 
+    <div class="alert alert-warning container align-items-center row mb-2 d-none" role="alert" id="alert-phone">
+     
+      <p class="text-center">
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        El telefono debe contener como maximo 
         <strong>10 numeros</strong>
+      </p>
+    </div>
+
+    <div class="alert alert-danger container align-items-center row mb-2  d-none" role="alert" id="inputs-null">
+      <p class="text-center" style="font-size: 1rem;">
+        <i class="fas fa-exclamation-triangle mx-2"></i>
+        Los campos 
+        <strong style="font-size: 1rem;">no pueden estar vacios</strong>
       </p>
     </div>
 
@@ -61,7 +85,7 @@
 
     <div class="row mb-3"  id="container-inputs">
 
-       <div class="col">         
+       <div class="col">       
         <input class="form-control" type="text" placeholder="First Name" id="nombre">
        </div> 
 
@@ -106,6 +130,7 @@
  <script src="js/jquery.js"></script>
  <script src="js/validacion.js"></script>
  <script src="js/responsive.js"></script>
+ <script src="https://kit.fontawesome.com/b883f5a3c0.js" crossorigin="anonymous"></script>
  <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 
 </body>
