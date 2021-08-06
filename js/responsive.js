@@ -5,7 +5,7 @@ $(window).on('resize', function () {
 	   if(widthBrower>=400 && widthBrower<=769){
 
                 $(".mensaje>.alert p, .mensaje>.alert p strong").css("font-size","12px");
-                $(".mensaje>.alert").css("padding","0px");
+                $(".mensaje>.alert").addClass("p-0");
 
 	   			$("form> #container-inputs").addClass("container");
 
@@ -20,7 +20,8 @@ $(window).on('resize', function () {
 	   }else{
 
 	   	$(".mensaje>.alert p, .mensaje>.alert p strong").css("font-size","1rem");
-        $(".mensaje>.alert").css("padding","1rem");
+        $(".mensaje>.alert").removeClass("p-0");
+
 
 	   $("form> #container-inputs").removeClass("container");
 
